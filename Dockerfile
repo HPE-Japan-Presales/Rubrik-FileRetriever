@@ -29,5 +29,12 @@ ARG ProjectDir
 
 WORKDIR /${ProjectDir}
 ENV CHILINFO_APP=$BuildTarget
+RUN apk --update add tzdata && \
+    ls /usr/share/zoneinfo && \
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+    echo "Asia/Tokyo" >  /etc/timezone &&\
+    date && \
+#    apk del tzdata && \
+    rm -rf /var/cache/apk/*
 COPY --from=builder /go/src/github.com/${ProjectDir}/main .
-ENTRYPOINT ["/Rubrik-FileRetriever/main"]
+CMD ["/Rubrik-FileRetriever/main"]
