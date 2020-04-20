@@ -1,0 +1,47 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+  labels:
+    app: test
+  namespace: rubrik
+spec:
+  initContainers:
+  - name: file-retriever01
+    image: fideltak/rubrik-file-retriever:0.1
+    imagePullPolicy: Always
+    env:
+      - name: rubrik_cdm_node_ip
+        value: 172.16.14.220
+      - name: rubrik_cdm_username
+        value: tak
+      - name: rubrik_cdm_password
+        value: P@ssw0rd
+      - name: RUBRICK_TARGET_HOST
+        value: rubrik-sql01.hybrid-lab.local
+      - name: RUBRICK_TARGET_FILESET
+        value: sdk01
+      - name: RUBRICK_TARGET_HOSTOS
+        value: Linux
+      - name: RUBRICK_TARGET_DATE
+        value: 04-20-2020 12:02 AM
+      - name: RUBRICK_TARGET_FILEPATH
+        value: /rubrik/bu-tar01/test01.txt
+      - name: DOWNLOAD_FILE_PATH
+        value: /tmp/test01.txt
+    volumeMounts:
+      - mountPath: /tmp
+        name: tmp
+  containers:
+  - name: target
+    image: alpine:3.9
+    command:
+      - "cat"
+      - "/tmp/test01.txt"
+    volumeMounts:
+      - mountPath: /tmp
+        name: tmp
+  volumes:
+    - emptyDir: {}
+      name: tmp
