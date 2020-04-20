@@ -14,6 +14,18 @@ import (
 var logging = &utils.Logging{}
 
 func main() {
+	logging.Infoln("Start Rubrik Retriever")
+	logging.Infof("rubrik_cdm_node_ip: %s", os.Getenv("rubrik_cdm_node_ip"))
+	logging.Infof("rubrik_cdm_username: %s", os.Getenv("rubrik_cdm_username"))
+	logging.Infoln("rubrik_cdm_password: ************")
+	logging.Infof("RUBRICK_TARGET_HOST: %s", os.Getenv("RUBRICK_TARGET_HOST"))
+	logging.Infof("RUBRICK_TARGET_FILESET: %s", os.Getenv("RUBRICK_TARGET_FILESET"))
+	logging.Infof("RUBRICK_TARGET_HOSTOS: %s", os.Getenv("RUBRICK_TARGET_HOSTOS"))
+	logging.Infof("RUBRICK_TARGET_DATE: %s", os.Getenv("RUBRICK_TARGET_DATE"))
+	logging.Infof("RUBRICK_TARGET_FILEPATH: %s", os.Getenv("RUBRICK_TARGET_FILEPATH"))
+	logging.Infof("DOWNLOAD_FILE_PATH: %s", os.Getenv("DOWNLOAD_FILE_PATH"))
+	logging.Infof("POST_SCRIPT_PATH: %s", os.Getenv("POST_SCRIPT_PATH"))
+
 	logging.Infoln("Trying to connect Rubrik Cluster")
 	rubrik, err := rubrikcdm.ConnectEnv()
 	if err != nil {
@@ -35,7 +47,7 @@ func main() {
 		os.Getenv("RUBRICK_TARGET_DATE"))
 
 	if err != nil {
-		logging.Fatalf("Failed to execute FileDownloadFromFileset: %v", err)
+		logging.Fatalf("Failed to execute file download job: %v", err)
 	}
 	logging.Infoln(jobUrl)
 	resp, err := rubrik.JobStatus(jobUrl)
