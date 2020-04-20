@@ -1,4 +1,5 @@
-github.com/fideltak/rubrik-sdk-for-go v0.0.0-20200418024456-b5067cc73f69 h1:x/3RMCNC9niIXNuVzwBLo8fPoGU1b4hPu/3K5tpbkn4=
 github.com/fideltak/rubrik-sdk-for-go v0.0.0-20200418024456-b5067cc73f69/go.mod h1:J/4PW5/nsTvT9ZScRU7RaWGDH1cTwoDbU8LurX3aCqk=
 github.com/mitchellh/mapstructure v1.2.2 h1:dxe5oCinTXiTIcfgmZecdCzPmAJKd46KsCWc35r0TV4=
 github.com/mitchellh/mapstructure v1.2.2/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
+github.com/rubrikinc/rubrik-sdk-for-go v0.0.0-20200420215633-9eaa613b6c0d h1:YTmbbzwO6nW7fo6ZPBar8BsyqWQKd8Mi+ZeTmvYS59o=
+github.com/rubrikinc/rubrik-sdk-for-go v0.0.0-20200420215633-9eaa613b6c0d/go.mod h1:GHNvchpcfem0oBFty2+MQb1SBvRZ/wsNBrCEcBOr4YI=

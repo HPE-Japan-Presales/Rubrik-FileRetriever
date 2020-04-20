@@ -7,7 +7,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/fideltak/rubrik-sdk-for-go/rubrikcdm"
+	"github.com/rubrikinc/rubrik-sdk-for-go/rubrikcdm"
 	utils "github.com/rubrik-filesets-restore/utils"
 )
 

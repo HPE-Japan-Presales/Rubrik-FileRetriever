@@ -25,7 +25,7 @@ spec:
       - name: RUBRICK_TARGET_HOSTOS
         value: Linux
       - name: RUBRICK_TARGET_DATE
-        value: 04-20-2020 12:02 AM
+        value: 04-20-2020 10:52 AM
       - name: RUBRICK_TARGET_FILEPATH
         value: /rubrik/bu-tar01/test01.txt
       - name: DOWNLOAD_FILE_PATH

@@ -15,7 +15,7 @@ func TestMain(t *testing.T) {
 	os.Setenv("RUBRICK_TARGET_DATE", "04-20-2020 12:02 AM")
 	os.Setenv("RUBRICK_TARGET_FILEPATH", "/rubrik/bu-tar01/test01.txt")
 	os.Setenv("DOWNLOAD_FILE_PATH", "/tmp/test01.txt")
-	os.Setenv("POST_SCRIPT_PATH", "/tmp/post.sh")
+//	os.Setenv("POST_SCRIPT_PATH", "/tmp/post.sh")
 
 	main()
 }
